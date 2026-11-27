@@ -4,6 +4,16 @@
 
 > A지점의 제한된 계정 두 개는 B지점 고객 상세를 볼 수 없었다. 그런데 그 고객의 문서를 **찾고 → 읽고 → 각각 수정·삭제**할 수 있었다. 삭제 후 DB 행과 실제 파일도 사라졌다.
 
+```mermaid
+flowchart LR
+    A["A지점의 제한 계정 2개"] -->|B고객 상세| B["404 · 보이지 않음"]
+    A -->|B문서 목록·첨부| C["200 · 문서 발견"]
+    C -->|수정 권한 계정| D["200 · 이름 변경"]
+    C -->|삭제 권한 계정| E["200 · DB 행·파일 삭제"]
+```
+
+**바로 볼 증거:** [API 요청별 기록](lab/evidence/document_office_single_account_chain_fresh_b033_regen_20261127.json) · [DB와 파일 상태](lab/evidence/document_office_single_account_chain_fresh_b033_regen_db_20261127.txt) · [권한 0개 차단 대조](lab/evidence/document_office_scope_b033_basic_zero_role_control_20261127.json)
+
 **읽는 순서:** 이 페이지 → [한국어 한 장 요약](SUMMARY_KO.md) → [상세 재현 기록](DOCUMENT_OFFICE_VERIFICATION_STATUS_20261127.md) · [English technical overview](TECHNICAL_OVERVIEW_EN.md)
 
 ## ① 출발점: 고객과 문서의 접근 경계
@@ -14,16 +24,9 @@ Fineract의 [지점 계층 문서](https://github.com/apache/fineract/blob/b033c
 
 ## ② 방향 전환: 공개 수정 이후의 지점 경계
 
-```mermaid
-flowchart TD
-    A["초기 신호<br/>1.16.1: 권한 0개 계정의 문서 요청 성공"] --> B["공개 수정 확인<br/>PR #6935: 문서 경로 권한 규칙 수정"]
-    B --> C["새 질문<br/>수정 뒤에도 고객의 지점 범위가 적용될까?"]
-    C --> D["직접 실행<br/>권한 0개는 403 · 문서 권한이 있는 A계정은?"]
-    D --> E["결과<br/>B고객 404 · B문서/첨부 200 · 수정/삭제 200"]
-    E --> F["반박 시험<br/>ID 탐색 · 파일 해시 · DB/파일 · 정상·차단 대조"]
-```
+**조사 경로:** 공식 1.16.1에서 권한 0개 문서 요청 성공 → [공개 수정 PR #6935](https://github.com/apache/fineract/pull/6935) 확인 → 수정 후 `develop`을 새 DB에서 실행 → 지점 제한 계정으로 다시 시험 → 해시·DB·파일과 차단 사례 대조.
 
-처음 발견한 넓은 문서 경로 권한 누락은 이미 [PR #6935](https://github.com/apache/fineract/pull/6935)가 다뤘다. 그래서 **그 수정이 들어간 `develop` 커밋**을 새 DB에서 직접 실행하고, 수정 뒤에도 남는 *객체별 지점 범위*를 확인했다.
+처음 발견한 넓은 문서 경로 권한 누락은 이미 공개 수정이 다뤘다. 그래서 **그 수정이 들어간 `develop` 커밋**에서 남은 *객체별 지점 범위*에 초점을 맞췄다.
 
 ## ③ 검증 결과: 발견부터 삭제까지
 
