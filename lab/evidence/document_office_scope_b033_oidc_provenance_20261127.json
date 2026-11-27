@@ -1,0 +1,18 @@
+{
+  "delete_document_row_count": 0,
+  "executed_git_head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "fixture": "lab/evidence/document_office_scope_b033_oidc_fixture_20261127.json",
+  "flags": {
+    "FINERACT_SECURITY_BASICAUTH_ENABLED": "true",
+    "FINERACT_SECURITY_OAUTH_ENABLED": "false",
+    "FINERACT_SECURITY_OIDC_FEDERATION_ENABLED": "true"
+  },
+  "git_status_porcelain": "",
+  "log_sha256": "b6a4d8d5662b07457e10a15ba1c82789aa842446124927e494bf17b18adc7fb2",
+  "note": "A separate zero-role OIDC check returned 401 with a new JWKS key under the already cached kid; excluded from security conclusions.",
+  "result": "lab/evidence/document_office_scope_b033_oidc_write_20261127.json",
+  "server_port": 8468,
+  "server_started": true,
+  "update_document_after": "11|2|OIDC A-office changed B document 1795749186",
+  "upstream_develop_head": "b033c13637123574a2242e39ce5e6aef29f58fdb"
+}

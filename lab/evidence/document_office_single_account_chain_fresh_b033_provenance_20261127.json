@@ -1,0 +1,44 @@
+{
+  "build_note": "Exact HEAD product source compiled and run. QueryDSL generated sources from prior 4d9557a HEAD were reused; bootRun excluded codegen because Docker VM I/O failed.",
+  "database_initialization": "createdb -U root for new empty master and tenant PostgreSQL databases before bootRun",
+  "databases": {
+    "master": "fineract_tenants_fresh_b033_20261127",
+    "master_liquibase_changesets": 22,
+    "tenant": "fineract_default_fresh_b033_20261127",
+    "tenant_liquibase_changesets": 2165
+  },
+  "environment": {
+    "java": "Homebrew OpenJDK 25.0.5.0.3",
+    "os": "macOS 15.0.1 arm64",
+    "postgresql": "PostgreSQL 16.15 Homebrew",
+    "spring_profile": "default; no test profile"
+  },
+  "evidence_sha256": {
+    "document_office_same_office_control_fresh_b033_20261127.json": "46ab9e1496e2d740dcafc5ac246385c54c9e0122db634a7517598d3b33fd18c4",
+    "document_office_scope_fresh_b033_seed_20261127.json": "8d7bb4bc589065a5bec1144b3e0bcd43cbc2abaa7e85c4da61c012a45208780a",
+    "document_office_scope_fresh_b033_state_20261127.json": "df60d68ba333d35124c0a1c8f9d50541c726d468634105d998719c7d9d87cc9c",
+    "document_office_single_account_chain_fresh_b033_20261127.json": "49509966f68e5d291f4dbc7c8f6a64a01df5182756ac8fb9b0bc881b6ec7174b",
+    "document_office_single_account_chain_fresh_b033_db_20261127.txt": "f44de43b33dcbcc9d274971877de386597bb5cba5808b830dfe69ef2241f58fc"
+  },
+  "executed_git_head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "full_log_sha256": "595bbe8a018d4f3728f80f7a61f533068feac7a8795029a20d5f668b1c9aaad3",
+  "git_status_porcelain": "",
+  "log_lines": {
+    "Started ServerApplication": "2026-11-27 11:19:28.440 - INFO 24330  [        default] --- [           main] org.apache.fineract.ServerApplication    : Started ServerApplication in 65.053 seconds (process running for 65.275)",
+    "Tenant store upgrade finished": "2026-11-27 11:18:40.524 - INFO 24330  [      no-tenant] --- [           main] a.f.i.c.s.m.TenantDatabaseUpgradeService : Tenant store upgrade finished",
+    "Tenant upgrades have successfully finished": "2026-11-27 11:19:00.140 - INFO 24330  [      no-tenant] --- [           main] a.f.i.c.s.m.TenantDatabaseUpgradeService : Tenant upgrades have successfully finished"
+  },
+  "recorded_at": "2026-11-27T11:21:13.671915+09:00",
+  "run_command": {
+    "basic_auth": "default enabled",
+    "default_tenant_db": "fineract_default_fresh_b033_20261127",
+    "excluded_task": ":fineract-querydsl:querydslCodegen",
+    "gradle_task": ":fineract-provider:bootRun",
+    "https_port": 8462,
+    "master_jdbc_url": "jdbc:postgresql://localhost:5432/fineract_tenants_fresh_b033_20261127",
+    "oauth": "default disabled",
+    "oidc_federation": "default disabled",
+    "server_address": "127.0.0.1"
+  },
+  "upstream_develop_head_at_recording": "b033c13637123574a2242e39ce5e6aef29f58fdb"
+}

@@ -1,0 +1,24 @@
+2026-11-26 KST, disposable local develop database, loopback HTTPS
+
+Executed source commit: 0747fa5fc4a6beb7df501ef02194161d6f14c187
+OIDC-only startup flags:
+  FINERACT_SECURITY_BASICAUTH_ENABLED=false
+  FINERACT_SECURITY_OAUTH_ENABLED=false
+  FINERACT_SECURITY_OIDC_FEDERATION_ENABLED=true
+Observed: startup failed before serving requests. Spring reported that
+ForgotPasswordServiceImpl requires a PasswordEncoder bean that could not be found.
+
+Effective external-token API mode startup flags:
+  FINERACT_SECURITY_BASICAUTH_ENABLED=true (default)
+  FINERACT_SECURITY_OAUTH_ENABLED=false
+  FINERACT_SECURITY_OIDC_FEDERATION_ENABLED=true
+Observed: ServerApplication started on HTTPS port 8453 without circular-reference flag.
+With only Basic credentials for the disposable admin, GET
+/fineract-provider/api/v1/clients/3/documents/2/attachment returned HTTP 401.
+The OIDC federation chain is ordered before the Basic chain for /api/**.
+
+Operator registered a temporary synthetic issuer/JWKS URL in the local tenant
+configuration. The synthetic issuer signed two short-lived JWTs whose
+preferred_username matched the pre-existing limited lab accounts. Results are
+in document_office_scope_external_oidc_develop.json. The issuer configuration
+was deleted after testing; no private key or JWT was saved.

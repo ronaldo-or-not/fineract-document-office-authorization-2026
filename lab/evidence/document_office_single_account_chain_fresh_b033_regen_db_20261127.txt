@@ -1,0 +1,9 @@
+USER_ROLE|docscope_chain_update_1795746681|2|READ_CLIENT
+USER_ROLE|docscope_chain_update_1795746681|2|READ_DOCUMENT
+USER_ROLE|docscope_chain_update_1795746681|2|UPDATE_DOCUMENT
+USER_ROLE|docscope_chain_delete_1795746681|2|DELETE_DOCUMENT
+USER_ROLE|docscope_chain_delete_1795746681|2|READ_CLIENT
+USER_ROLE|docscope_chain_delete_1795746681|2|READ_DOCUMENT
+CLIENT|1|2
+CLIENT|2|3
+DOCUMENT|7|clients|2|A-office account changed B document after API scan 1795746681

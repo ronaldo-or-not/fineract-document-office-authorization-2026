@@ -1,0 +1,10 @@
+{
+  "executed_git_head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "git_status_porcelain": "",
+  "log_sha256": "b076fbe7e664cb222277d3507a9b96f04024c1d1a16068e4b95d1f4009d8d9c2",
+  "mode": "Basic enabled; OAuth and OIDC disabled",
+  "result": "lab/evidence/document_office_scope_b033_basic_zero_role_control_20261127.json",
+  "server_port": 8469,
+  "server_started": true,
+  "upstream_develop_head": "b033c13637123574a2242e39ce5e6aef29f58fdb"
+}

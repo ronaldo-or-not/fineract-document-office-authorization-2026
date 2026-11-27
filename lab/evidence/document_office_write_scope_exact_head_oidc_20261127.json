@@ -1,0 +1,56 @@
+{
+  "fixture_ids": {
+    "delete": 10,
+    "update": 9
+  },
+  "issuer": "http://127.0.0.1:8181/docscope",
+  "observations": {
+    "basic_only_control": {
+      "http": 401
+    },
+    "deleter_b_client": {
+      "http": 404
+    },
+    "deleter_b_doc_read": {
+      "http": 403
+    },
+    "deleter_denied_update": {
+      "http": 403
+    },
+    "deleter_wrong_parent_delete": {
+      "http": 200
+    },
+    "reader_delete_after": {
+      "http": 404
+    },
+    "reader_delete_before": {
+      "http": 200,
+      "name": "Synthetic HEAD-OIDC-B-DELETE-1795705997"
+    },
+    "reader_update_after": {
+      "http": 200,
+      "name": "OIDC A-office changed B document 1795706119"
+    },
+    "reader_update_before": {
+      "http": 200,
+      "name": "Synthetic HEAD-OIDC-B-UPDATE-1795705997"
+    },
+    "updater_b_client": {
+      "http": 404
+    },
+    "updater_b_doc_read": {
+      "http": 403
+    },
+    "updater_denied_delete": {
+      "http": 403
+    },
+    "updater_wrong_parent_update": {
+      "http": 200
+    }
+  },
+  "source": "https://localhost:8458/fineract-provider",
+  "users": {
+    "deleter": "docscope_delete_1795705937",
+    "updater": "docscope_update_1795705937"
+  }
+}

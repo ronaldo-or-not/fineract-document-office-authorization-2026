@@ -1,0 +1,58 @@
+{
+  "fixture_ids": {
+    "delete": 12,
+    "update": 11
+  },
+  "issuer": "http://127.0.0.1:8181/docscope",
+  "observations": {
+    "basic_only_control": {
+      "http": 401
+    },
+    "deleter_b_client": {
+      "http": 404
+    },
+    "deleter_b_doc_read": {
+      "http": 200,
+      "name": "Synthetic HEAD-OIDC-B-DELETE-1795749085"
+    },
+    "deleter_denied_update": {
+      "http": 403
+    },
+    "deleter_wrong_parent_delete": {
+      "http": 200
+    },
+    "reader_delete_after": {
+      "http": 404
+    },
+    "reader_delete_before": {
+      "http": 200,
+      "name": "Synthetic HEAD-OIDC-B-DELETE-1795749085"
+    },
+    "reader_update_after": {
+      "http": 200,
+      "name": "OIDC A-office changed B document 1795749186"
+    },
+    "reader_update_before": {
+      "http": 200,
+      "name": "Synthetic HEAD-OIDC-B-UPDATE-1795749085"
+    },
+    "updater_b_client": {
+      "http": 404
+    },
+    "updater_b_doc_read": {
+      "http": 200,
+      "name": "Synthetic HEAD-OIDC-B-UPDATE-1795749085"
+    },
+    "updater_denied_delete": {
+      "http": 403
+    },
+    "updater_wrong_parent_update": {
+      "http": 200
+    }
+  },
+  "source": "https://127.0.0.1:8468/fineract-provider",
+  "users": {
+    "deleter": "docscope_chain_delete_1795746681",
+    "updater": "docscope_chain_update_1795746681"
+  }
+}

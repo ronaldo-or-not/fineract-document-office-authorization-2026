@@ -1,0 +1,103 @@
+{
+  "ids": {
+    "client_a": 1,
+    "client_b": 2,
+    "document_a": 1,
+    "document_b": 2,
+    "nodoc_role": 4,
+    "nodoc_user": 5,
+    "office_a": 2,
+    "office_b": 3,
+    "reader_role": 3,
+    "reader_user": 4,
+    "zero_role": 5,
+    "zero_user": 6
+  },
+  "observations": {
+    "nodoc_other_attachment": {
+      "bytes": 143,
+      "http": 200,
+      "sha256": "380f4221eb18e55a81484f3bfd1ffbe1bc4c9fad48f60c8b160a4469f15350f2",
+      "synthetic_marker": true
+    },
+    "nodoc_other_doc_list": {
+      "bytes": 128,
+      "http": 403
+    },
+    "nodoc_other_doc_meta": {
+      "bytes": 288,
+      "count": null,
+      "http": 200,
+      "ids": []
+    },
+    "reader_other_attachment": {
+      "bytes": 143,
+      "http": 200,
+      "sha256": "380f4221eb18e55a81484f3bfd1ffbe1bc4c9fad48f60c8b160a4469f15350f2",
+      "synthetic_marker": true
+    },
+    "reader_other_client": {
+      "bytes": 452,
+      "http": 404
+    },
+    "reader_other_doc_list": {
+      "bytes": 290,
+      "count": 1,
+      "http": 200,
+      "ids": [
+        2
+      ]
+    },
+    "reader_other_doc_meta": {
+      "bytes": 288,
+      "count": null,
+      "http": 200,
+      "ids": []
+    },
+    "reader_own_attachment": {
+      "bytes": 143,
+      "http": 200,
+      "sha256": "8db2bac5ffc1e17c066db9a5f1cb2da46afb9f6f72767069aa3e2d20644d110c",
+      "synthetic_marker": true
+    },
+    "reader_own_client": {
+      "bytes": 602,
+      "count": null,
+      "http": 200,
+      "ids": []
+    },
+    "reader_own_doc_list": {
+      "bytes": 290,
+      "count": 1,
+      "http": 200,
+      "ids": [
+        1
+      ]
+    },
+    "reader_wrong_parent": {
+      "bytes": 526,
+      "http": 404
+    },
+    "zero_other_attachment": {
+      "bytes": 143,
+      "http": 200,
+      "sha256": "380f4221eb18e55a81484f3bfd1ffbe1bc4c9fad48f60c8b160a4469f15350f2",
+      "synthetic_marker": true
+    },
+    "zero_other_client": {
+      "bytes": 516,
+      "http": 403
+    },
+    "zero_other_doc_list": {
+      "bytes": 128,
+      "http": 403
+    },
+    "zero_other_doc_meta": {
+      "bytes": 288,
+      "count": null,
+      "http": 200,
+      "ids": []
+    }
+  },
+  "source": "https://127.0.0.1:8465/fineract-provider/api/v1"
+}

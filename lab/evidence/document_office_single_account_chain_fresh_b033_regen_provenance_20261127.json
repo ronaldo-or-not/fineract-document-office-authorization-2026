@@ -1,0 +1,30 @@
+{
+  "codegen": {
+    "generated_source_sha256": {
+      "fineract-querydsl/build/generated/sources/querydsl/java/main/org/apache/fineract/query/QMClient.java": "0114a795deeec001209d9a363d37211d1a9b0d3fb740149fada7ec69ae3d66c3",
+      "fineract-querydsl/build/generated/sources/querydsl/java/main/org/apache/fineract/query/QMDocument.java": "c63c4a15ac3702cd7f79bc7b379df422503783baca9ab8b1e385f5d36b6a7c83"
+    },
+    "liquibase_changesets_run": 2165,
+    "log_sha256": "cef0c6257408f79381aba853baaecc21540a63d8d639afa54db3566e8b1f9c00",
+    "result": "BUILD SUCCESSFUL",
+    "source_schema_commit": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+    "temporary_changes": "Local PostgreSQL codegen adapter in two Gradle plugin files, restored with git restore before server build and runtime"
+  },
+  "evidence_sha256": {
+    "document_office_same_office_control_fresh_b033_regen_20261127.json": "f9d62ffa0907c1a265abbd305fafab745697166e5ea74c70d3a9913d2fa27711",
+    "document_office_single_account_chain_fresh_b033_regen_20261127.json": "447f3fd8a9bc06eeb8ccaa0be804708a7d8f0a26d7a4151268aebdd6a3850c4d",
+    "document_office_single_account_chain_fresh_b033_regen_db_20261127.txt": "2876f035b10c35b25622d866e6b904cf2917d7a3778af76e8e8376dac6924514"
+  },
+  "executed_git_head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "git_status_porcelain": "",
+  "recorded_at": "2026-11-27T11:31:57.770610+09:00",
+  "runtime": {
+    "command": ":fineract-provider:bootRun -x :fineract-querydsl:querydslCodegen",
+    "database": "fineract_default_fresh_b033_20261127",
+    "log_sha256": "d787ed9c1cfd3a37c4257a89446b41cd84d2eb2a9888fdbc7ac1f35151bc48cd",
+    "port": 8463,
+    "provider_compile_seen": true,
+    "startup_line": "2026-11-27 11:30:53.422 - INFO 36846  [        default] --- [           main] org.apache.fineract.ServerApplication    : Started ServerApplication in 47.781 seconds (process running for 47.984)"
+  },
+  "upstream_develop_head_at_recording": "b033c13637123574a2242e39ce5e6aef29f58fdb"
+}

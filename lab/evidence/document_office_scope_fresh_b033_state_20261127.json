@@ -1,0 +1,14 @@
+{
+  "client_a": 1,
+  "client_b": 2,
+  "document_a": 1,
+  "document_b": 2,
+  "nodoc_role": 4,
+  "nodoc_user": 5,
+  "office_a": 2,
+  "office_b": 3,
+  "reader_role": 3,
+  "reader_user": 4,
+  "zero_role": 5,
+  "zero_user": 6
+}

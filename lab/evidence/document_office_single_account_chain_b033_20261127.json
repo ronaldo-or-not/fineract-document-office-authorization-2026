@@ -1,0 +1,267 @@
+{
+  "actors": {
+    "delete": {
+      "attachment_http": 200,
+      "attachment_sha256": "6254a7f4567d81a2ffd47948fc62b10e3051ab569fcefdbd1a5d798760974ce2",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 3,
+        "document_id": 16
+      },
+      "document_after_http": 404,
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-DELETE-1795745718",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_ids": [
+            13,
+            1
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_ids": [
+            16,
+            15,
+            11,
+            9,
+            7,
+            5,
+            3,
+            2
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_ids": [],
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "DELETE",
+      "write_path": "/clients/3/documents/16"
+    },
+    "update": {
+      "attachment_http": 200,
+      "attachment_sha256": "63f2f7fb8dd7a16458d1c058627f95b15fa1e8b3d038c8afef31b613cb1d86b2",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 3,
+        "document_id": 15
+      },
+      "document_after_http": 200,
+      "document_after_name": "A-office account changed B document after API scan 1795745718",
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-UPDATE-1795745718",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_ids": [
+            13,
+            1
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_ids": [
+            16,
+            15,
+            11,
+            9,
+            7,
+            5,
+            3,
+            2
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_ids": [],
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "PUT",
+      "write_path": "/clients/3/documents/15"
+    }
+  },
+  "git_status_porcelain": "",
+  "head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "operator_oracle_after": {
+    "delete_db_row_exists": false,
+    "delete_file_exists": false,
+    "update_db_row_exists": true,
+    "update_file_exists": true
+  },
+  "scan_range": [
+    1,
+    16
+  ],
+  "setup": {
+    "actors": {
+      "delete": {
+        "role": 14,
+        "user": 16,
+        "username": "docscope_chain_delete_1795745718"
+      },
+      "update": {
+        "role": 13,
+        "user": 15,
+        "username": "docscope_chain_update_1795745718"
+      }
+    },
+    "delete": {
+      "client_id": 3,
+      "document_id": 16,
+      "file_existed_before": true,
+      "file_sha256": "6254a7f4567d81a2ffd47948fc62b10e3051ab569fcefdbd1a5d798760974ce2",
+      "location": "documents/clients/3/bhRJQbNwgcycgPEZ/synthetic-CHAIN-DELETE-1795745718.png",
+      "name": "Synthetic CHAIN-DELETE-1795745718"
+    },
+    "update": {
+      "client_id": 3,
+      "document_id": 15,
+      "file_existed_before": true,
+      "file_sha256": "63f2f7fb8dd7a16458d1c058627f95b15fa1e8b3d038c8afef31b613cb1d86b2",
+      "location": "documents/clients/3/BssfQGxsMkNvIFlZ/synthetic-CHAIN-UPDATE-1795745718.png",
+      "name": "Synthetic CHAIN-UPDATE-1795745718"
+    }
+  },
+  "source": "https://localhost:8461/fineract-provider/api/v1",
+  "tenant_db": "fineract_default_b033_20261127"
+}

@@ -1,0 +1,16 @@
+{
+  "cause": "Parameter 1 of constructor in org.apache.fineract.useradministration.service.ForgotPasswordServiceImpl required a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' that could not be found.",
+  "executed_git_head": "4d9557a572b178bd32e1839f81c48204b8fcad49",
+  "flags": {
+    "FINERACT_SECURITY_BASICAUTH_ENABLED": "false",
+    "FINERACT_SECURITY_OAUTH_ENABLED": "false",
+    "FINERACT_SECURITY_OIDC_FEDERATION_ENABLED": "true"
+  },
+  "full_log_sha256": "8a49612b99e07a391f05ed41fd163a4962f382b960c4500ad1471331e2b1057c",
+  "git_status_porcelain": "",
+  "gradle_result": "BUILD FAILED in 1m 9s",
+  "note": "No product source edits or extra PasswordEncoder bean. Default product configuration with these flags.",
+  "recorded_at": "2026-11-27T00:21:14.979106+09:00",
+  "result": "APPLICATION FAILED TO START",
+  "server_started": false
+}

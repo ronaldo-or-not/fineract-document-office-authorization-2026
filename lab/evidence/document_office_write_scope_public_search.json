@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-11-26T14:55:54.985562+00:00",
+  "limit": "Search cannot see private reports or prove novelty.",
+  "queries": [
+    {
+      "first_items": [],
+      "query": "repo:apache/fineract \"DELETE_DOCUMENT\" \"office\"",
+      "total_count": 0
+    },
+    {
+      "first_items": [],
+      "query": "repo:apache/fineract \"UPDATE_DOCUMENT\" \"office\"",
+      "total_count": 0
+    },
+    {
+      "first_items": [],
+      "query": "repo:apache/fineract \"DocumentWritePlatformServiceImpl\" \"authorization\"",
+      "total_count": 0
+    },
+    {
+      "first_items": [
+        {
+          "number": 4546,
+          "title": "FINERACT-2237: Fix GSIM account creation to generate single parent for multiple clients",
+          "url": "https://github.com/apache/fineract/pull/4546"
+        }
+      ],
+      "query": "repo:apache/fineract \"document\" \"wrong parent\"",
+      "total_count": 1
+    }
+  ],
+  "source": "GitHub public issues and pull requests search API"
+}

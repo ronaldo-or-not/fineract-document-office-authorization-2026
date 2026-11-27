@@ -1,0 +1,255 @@
+{
+  "actors": {
+    "delete": {
+      "attachment_http": 200,
+      "attachment_sha256": "3f6d3758ff97596a8d43ebe9cd73cfdbebc224fe9f61d6acec26e9667fe786a7",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 2,
+        "document_id": 4
+      },
+      "document_after_http": 404,
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-DELETE-1795748654",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_ids": [
+            1
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_ids": [
+            4,
+            3,
+            2
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_ids": [],
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "DELETE",
+      "write_path": "/clients/2/documents/4"
+    },
+    "update": {
+      "attachment_http": 200,
+      "attachment_sha256": "ac9f746fed7deff8c9bfbd5806eaf5564c5e0072ba2ebb9725992b09be3b949a",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 2,
+        "document_id": 3
+      },
+      "document_after_http": 200,
+      "document_after_name": "A-office account changed B document after API scan 1795748654",
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-UPDATE-1795748654",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_ids": [
+            1
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_ids": [
+            4,
+            3,
+            2
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_ids": [],
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "PUT",
+      "write_path": "/clients/2/documents/3"
+    }
+  },
+  "artifact_name": "fineract-provider-1.16.1.jar",
+  "artifact_sha256": "bd70aa4033f1121549e921c982db10adf6fab151acd3dc3043b505dcf779308b",
+  "operator_oracle_after": {
+    "delete_db_row_exists": false,
+    "delete_file_exists": false,
+    "update_db_row_exists": true,
+    "update_file_exists": true
+  },
+  "scan_range": [
+    1,
+    16
+  ],
+  "setup": {
+    "actors": {
+      "delete": {
+        "role": 7,
+        "user": 8,
+        "username": "docscope_chain_delete_1795748654"
+      },
+      "update": {
+        "role": 6,
+        "user": 7,
+        "username": "docscope_chain_update_1795748654"
+      }
+    },
+    "delete": {
+      "client_id": 2,
+      "document_id": 4,
+      "file_existed_before": true,
+      "file_sha256": "3f6d3758ff97596a8d43ebe9cd73cfdbebc224fe9f61d6acec26e9667fe786a7",
+      "location": "documents/clients/2/kZZVQAvkOKUrzLfO/synthetic-CHAIN-DELETE-1795748654.png",
+      "name": "Synthetic CHAIN-DELETE-1795748654"
+    },
+    "update": {
+      "client_id": 2,
+      "document_id": 3,
+      "file_existed_before": true,
+      "file_sha256": "ac9f746fed7deff8c9bfbd5806eaf5564c5e0072ba2ebb9725992b09be3b949a",
+      "location": "documents/clients/2/liYnPxBQxDjeVXoA/synthetic-CHAIN-UPDATE-1795748654.png",
+      "name": "Synthetic CHAIN-UPDATE-1795748654"
+    }
+  },
+  "source": "https://127.0.0.1:8465/fineract-provider/api/v1",
+  "tenant_db": "fineract_default_1161_write_20261127"
+}

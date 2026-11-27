@@ -1,0 +1,32 @@
+{
+  "authentication": "Fineract built-in OAuth2 authorization code with PKCE",
+  "claims": {
+    "role": [
+      "Synthetic Client Only 20261126"
+    ],
+    "scope": [
+      "READ_CLIENT"
+    ],
+    "sub": "doc_scope_nodoc_20261126",
+    "tenant": "default"
+  },
+  "results": {
+    "attachment": {
+      "bytes": 0,
+      "http": 403
+    },
+    "client": {
+      "bytes": 452,
+      "http": 404
+    },
+    "doc_list": {
+      "bytes": 0,
+      "http": 403
+    },
+    "doc_meta": {
+      "bytes": 0,
+      "http": 403
+    }
+  },
+  "user": "doc_scope_nodoc_20261126"
+}

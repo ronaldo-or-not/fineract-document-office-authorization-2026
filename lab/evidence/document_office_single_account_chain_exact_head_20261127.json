@@ -1,0 +1,243 @@
+{
+  "actors": {
+    "delete": {
+      "attachment_http": 200,
+      "attachment_sha256": "121fea696c6574db3b0f359880ac16e47834c90f5478bd26d9b0f0b3c1b228db",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 3,
+        "document_id": 12
+      },
+      "document_after_http": 404,
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-DELETE-1795745310",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_count": 1,
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_count": 7,
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_count": 0,
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "DELETE",
+      "write_path": "/clients/3/documents/12"
+    },
+    "update": {
+      "attachment_http": 200,
+      "attachment_sha256": "9ea490da6429ee8a2e62b2a16cab16b142757e2e87496c3d6b26440e2ad79157",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 3,
+        "document_id": 11
+      },
+      "document_after_http": 200,
+      "document_after_name": "A-office account changed B document after API scan 1795745310",
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-UPDATE-1795745310",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_count": 1,
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_count": 7,
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_count": 0,
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_count": 0,
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "PUT",
+      "write_path": "/clients/3/documents/11"
+    }
+  },
+  "git_status_porcelain": "",
+  "head": "4d9557a572b178bd32e1839f81c48204b8fcad49",
+  "operator_oracle_after": {
+    "delete_db_row_exists": false,
+    "delete_file_exists": false,
+    "update_db_row_exists": true,
+    "update_file_exists": true
+  },
+  "scan_range": [
+    1,
+    16
+  ],
+  "setup": {
+    "actors": {
+      "delete": {
+        "role": 12,
+        "user": 14,
+        "username": "docscope_chain_delete_1795745310"
+      },
+      "update": {
+        "role": 11,
+        "user": 13,
+        "username": "docscope_chain_update_1795745310"
+      }
+    },
+    "delete": {
+      "client_id": 3,
+      "document_id": 12,
+      "file_existed_before": true,
+      "file_sha256": "121fea696c6574db3b0f359880ac16e47834c90f5478bd26d9b0f0b3c1b228db",
+      "location": "documents/clients/3/vjjncEQkjXLMXFik/synthetic-CHAIN-DELETE-1795745310.png",
+      "name": "Synthetic CHAIN-DELETE-1795745310"
+    },
+    "update": {
+      "client_id": 3,
+      "document_id": 11,
+      "file_existed_before": true,
+      "file_sha256": "9ea490da6429ee8a2e62b2a16cab16b142757e2e87496c3d6b26440e2ad79157",
+      "location": "documents/clients/3/SQMnEftwHGNbkcra/synthetic-CHAIN-UPDATE-1795745310.png",
+      "name": "Synthetic CHAIN-UPDATE-1795745310"
+    }
+  },
+  "source": "https://localhost:8460/fineract-provider/api/v1",
+  "tenant_db": "fineract_default_chain_20261127"
+}

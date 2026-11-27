@@ -1,0 +1,33 @@
+{
+  "actor": {
+    "office_hierarchy": ".2.",
+    "office_id": 2,
+    "permission_count": 0,
+    "role_id": 5,
+    "user_id": 6,
+    "username": "doc_scope_zero_20261126"
+  },
+  "observations": {
+    "delete_db_row_count": 0,
+    "delete_file_exists": false,
+    "delete_http": 200,
+    "deleted_document_get_http": 404,
+    "other_attachment_http": 200,
+    "other_attachment_sha256": "65c4b917ed0766e990fecb366ff66a3f6a9ce88c1b2a1aaf3cef6f7ee44f2a21",
+    "other_client_http": 403,
+    "other_document_get_http": 200,
+    "other_document_list_http": 403,
+    "own_client_http": 403,
+    "update_http": 200,
+    "updated_name": "Zero-role account changed B document 1795748806"
+  },
+  "official_jar_sha256": "bd70aa4033f1121549e921c982db10adf6fab151acd3dc3043b505dcf779308b",
+  "source": "https://127.0.0.1:8465/fineract-provider/api/v1",
+  "target": {
+    "client_id": 2,
+    "delete_document_id": 8,
+    "delete_file_sha256_before": "0d29a19ab7fb19ca133d5162b3511f053504f55611d31b1990f69ab5d22be845",
+    "update_document_id": 7,
+    "update_file_sha256_before": "65c4b917ed0766e990fecb366ff66a3f6a9ce88c1b2a1aaf3cef6f7ee44f2a21"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "delete_document_id": 6,
+  "delete_sha256": "4efde406c62a4c8e6dd6d32170361d291dea09bc96bcd4a655c47d960a280bbe",
+  "issuer": "http://127.0.0.1:8181/docscope",
+  "jwks_uri": "http://127.0.0.1:8181/jwks",
+  "oidc_config_http": 200,
+  "update_document_id": 5,
+  "update_sha256": "171186802e00044c655b88c4dc2a3809dd080920cba4a7056d61fe5747ff00e3"
+}

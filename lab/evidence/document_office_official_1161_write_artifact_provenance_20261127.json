@@ -1,0 +1,12 @@
+{
+  "version": "1.16.1",
+  "archive_url": "https://downloads.apache.org/fineract/1.16.1/apache-fineract-bin-1.16.1.tar.gz",
+  "checksum_url": "https://downloads.apache.org/fineract/1.16.1/apache-fineract-bin-1.16.1.tar.gz.sha512",
+  "archive_bytes": 472898481,
+  "archive_sha512": "85fdb4b156520e5d13b74fc6f9c69873177e0ded02c9e5781bba627aa434997822bbd114a8224d4c50d948aa12ea12cf216230bbc1ab0472668969597109eb6d",
+  "jar_entry": "apache-fineract-bin-1.16.1/fineract-provider-1.16.1.jar",
+  "jar_path": "/tmp/fineract-provider-1.16.1.jar",
+  "jar_bytes": 235188039,
+  "jar_sha256": "bd70aa4033f1121549e921c982db10adf6fab151acd3dc3043b505dcf779308b",
+  "prior_independent_jar_checksum_match": true
+}

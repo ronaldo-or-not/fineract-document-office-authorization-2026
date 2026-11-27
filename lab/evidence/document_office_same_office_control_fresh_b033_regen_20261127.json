@@ -1,0 +1,18 @@
+{
+  "client_a": 1,
+  "delete_document_id": 10,
+  "observations": {
+    "delete_doc_after_http": 404,
+    "delete_doc_before_http": 200,
+    "delete_file_exists_after": false,
+    "delete_http": 200,
+    "delete_own_client_http": 200,
+    "update_doc_after_http": 200,
+    "update_doc_after_name": "Same-office control changed 1795746695",
+    "update_doc_before_http": 200,
+    "update_http": 200,
+    "update_own_client_http": 200
+  },
+  "source": "https://localhost:8463/fineract-provider/api/v1",
+  "update_document_id": 9
+}

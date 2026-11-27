@@ -1,0 +1,20 @@
+{
+  "build_note": "Product source clean. Existing generated QueryDSL sources from previous HEAD were reused by bootRun with codegen excluded because Docker VM I/O failed; newly changed product source compiled on this HEAD.",
+  "databases": {
+    "master": "fineract_tenants_b033_20261127",
+    "tenant": "fineract_default_b033_20261127"
+  },
+  "evidence_sha256": {
+    "document_office_same_office_control_b033_20261127.json": "c4efa8c6b36ffa962b09a5b761beae72648be756028dc72ed7f83bf37846a1f0",
+    "document_office_single_account_chain_b033_20261127.json": "0bd9f7baabdbca8f83b519573edf0965e5289706081860d1c30da88658e32a27",
+    "document_office_single_account_chain_db_b033_20261127.txt": "7a0d0e16f69ae5c8b639b3d608820c3e9c819bfe3ef4a235c73d0a7f0562aa7b"
+  },
+  "executed_git_head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "full_log_sha256": "96db9f1a0aa58aee610b962b8e7188130f67a8dc928eb35f7c391f060d7e72fe",
+  "git_status_porcelain": "",
+  "provider_compile_seen": true,
+  "recorded_at": "2026-11-27T11:16:29.438570+09:00",
+  "relevant_security_and_document_files_unchanged_from_previous_head": true,
+  "server_startup_line": "2026-11-27 11:14:50.244 - INFO 19804  [        default] --- [           main] org.apache.fineract.ServerApplication    : Started ServerApplication in 51.583 seconds (process running for 53.938)",
+  "upstream_develop_head_at_recording": "b033c13637123574a2242e39ce5e6aef29f58fdb"
+}

@@ -1,0 +1,2 @@
+1|Super user|ALL_FUNCTIONS
+2|Self Service User|

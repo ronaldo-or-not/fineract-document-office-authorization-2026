@@ -1,0 +1,10 @@
+{
+  "note": "Post-test check only; no pre-delete filesystem snapshot. HTTP and database before/after evidence is primary.",
+  "post_test_presence": {
+    "synthetic-B-DELETE-1795704466.png": false,
+    "synthetic-B-UPDATE-1795704466.png": true,
+    "synthetic-OIDC-B-DELETE-1795704601.png": false,
+    "synthetic-OIDC-B-UPDATE-1795704601.png": true
+  },
+  "root": "~/.fineract/DefaultDemoTenant"
+}

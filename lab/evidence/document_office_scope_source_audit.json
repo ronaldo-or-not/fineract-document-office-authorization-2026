@@ -1,0 +1,81 @@
+{
+  "files": [
+    {
+      "identical": true,
+      "path": "fineract-document/src/main/java/org/apache/fineract/infrastructure/documentmanagement/api/DocumentApiResource.java",
+      "sha256": {
+        "latest": "67340242ffb69b14d8f92f8a7096c310b3f7e9ffc65a57fd9a244195808836b9",
+        "tested": "67340242ffb69b14d8f92f8a7096c310b3f7e9ffc65a57fd9a244195808836b9"
+      }
+    },
+    {
+      "identical": true,
+      "path": "fineract-document/src/main/java/org/apache/fineract/infrastructure/documentmanagement/service/DocumentReadPlatformServiceImpl.java",
+      "sha256": {
+        "latest": "a3eb08b00e0eb0cdcaacb670dbb0fe2e8a4eb873dc17ccccacefb0d06b78fd8f",
+        "tested": "a3eb08b00e0eb0cdcaacb670dbb0fe2e8a4eb873dc17ccccacefb0d06b78fd8f"
+      }
+    },
+    {
+      "identical": false,
+      "path": "fineract-provider/src/main/java/org/apache/fineract/infrastructure/core/config/ApiAuthorizationRules.java",
+      "sha256": {
+        "latest": "626f697c397ad873bc0a6196ab78779ab0f7faa0f94acf41c006c0bcb859e014",
+        "tested": "56d0c9b40e4f6a70174ab4c5b509397fbba953f22744027c792cc1042ece2447"
+      }
+    },
+    {
+      "identical": true,
+      "path": "fineract-provider/src/main/java/org/apache/fineract/infrastructure/security/config/AuthorizationServerConfig.java",
+      "sha256": {
+        "latest": "fc9fcf678770edac2cc577616d8d818d3e2f15f37330fd8b10e868de84477456",
+        "tested": "fc9fcf678770edac2cc577616d8d818d3e2f15f37330fd8b10e868de84477456"
+      }
+    },
+    {
+      "identical": true,
+      "path": "fineract-provider/src/main/java/org/apache/fineract/infrastructure/security/config/OidcFederationSecurityConfig.java",
+      "sha256": {
+        "latest": "deddd6d0c23f81e06a2493148e62e25c80b5afe09d44ebd8c4044073de168c7b",
+        "tested": "deddd6d0c23f81e06a2493148e62e25c80b5afe09d44ebd8c4044073de168c7b"
+      }
+    },
+    {
+      "identical": true,
+      "path": "fineract-provider/src/main/java/org/apache/fineract/portfolio/client/service/ClientReadPlatformServiceImpl.java",
+      "sha256": {
+        "latest": "24191daa16a393bc2ee4a6172868bad982763fb04db1f9a2468235839b42a832",
+        "tested": "24191daa16a393bc2ee4a6172868bad982763fb04db1f9a2468235839b42a832"
+      }
+    },
+    {
+      "identical": true,
+      "path": "fineract-document/src/main/java/org/apache/fineract/infrastructure/documentmanagement/service/DocumentWritePlatformServiceImpl.java",
+      "sha256": {
+        "latest": "aa78c11ba89768158059a406453495f332c6012aa359501f4ae4835d81bc9e9a",
+        "tested": "aa78c11ba89768158059a406453495f332c6012aa359501f4ae4835d81bc9e9a"
+      }
+    },
+    {
+      "identical": true,
+      "path": "fineract-document/src/main/java/org/apache/fineract/infrastructure/documentmanagement/handler/DocumentUpdateCommandHandler.java",
+      "sha256": {
+        "latest": "85b7e1ea36054fbebd5d743e6be02a806cbb3f4c967b8af765ed1e4d7450119a",
+        "tested": "85b7e1ea36054fbebd5d743e6be02a806cbb3f4c967b8af765ed1e4d7450119a"
+      }
+    },
+    {
+      "identical": true,
+      "path": "fineract-document/src/main/java/org/apache/fineract/infrastructure/documentmanagement/handler/DocumentDeleteCommandHandler.java",
+      "sha256": {
+        "latest": "12f05a712d76594b3a02e587a9a9b38e13544a8db190ebf0b71b6e3061001b56",
+        "tested": "12f05a712d76594b3a02e587a9a9b38e13544a8db190ebf0b71b6e3061001b56"
+      }
+    }
+  ],
+  "note": "ApiAuthorizationRules differs only in three client identifier mutation rules, not document rules.",
+  "public_pr_6935_merge_commit": "c3d46e9ee",
+  "public_pr_merge_is_ancestor_of_latest": true,
+  "tested_runtime_commit": "0747fa5fc4a6beb7df501ef02194161d6f14c187",
+  "upstream_latest_commit_2026_11_26": "4d9557a572b178bd32e1839f81c48204b8fcad49"
+}

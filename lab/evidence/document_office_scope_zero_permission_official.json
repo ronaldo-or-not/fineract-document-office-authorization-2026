@@ -1,0 +1,25 @@
+{
+  "permissions": [],
+  "results": {
+    "attachment": {
+      "bytes": 143,
+      "http": 200,
+      "sha256": "380f4221eb18e55a81484f3bfd1ffbe1bc4c9fad48f60c8b160a4469f15350f2",
+      "synthetic_marker": true
+    },
+    "client": {
+      "bytes": 516,
+      "http": 403
+    },
+    "doc_list": {
+      "bytes": 128,
+      "http": 403
+    },
+    "doc_meta": {
+      "bytes": 288,
+      "http": 200
+    }
+  },
+  "role_id": 6,
+  "user_id": 8
+}

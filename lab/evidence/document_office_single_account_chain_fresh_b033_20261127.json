@@ -1,0 +1,255 @@
+{
+  "actors": {
+    "delete": {
+      "attachment_http": 200,
+      "attachment_sha256": "368a761e1f55f54c93c48b5e79986a97836722ea9da52ad062eed4c0db870fc6",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 2,
+        "document_id": 4
+      },
+      "document_after_http": 404,
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-DELETE-1795745990",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_ids": [
+            1
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_ids": [
+            4,
+            3,
+            2
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_ids": [],
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "DELETE",
+      "write_path": "/clients/2/documents/4"
+    },
+    "update": {
+      "attachment_http": 200,
+      "attachment_sha256": "cf80c16e5a07599ef214b7986949fda632989d471e2a44c68668249dbafaa752",
+      "client_detail_http": 404,
+      "discovered_from_api": {
+        "client_id": 2,
+        "document_id": 3
+      },
+      "document_after_http": 200,
+      "document_after_name": "A-office account changed B document after API scan 1795745990",
+      "document_before_http": 200,
+      "document_before_name": "Synthetic CHAIN-UPDATE-1795745990",
+      "scan": [
+        {
+          "client_id": 1,
+          "document_ids": [
+            1
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 2,
+          "document_ids": [
+            4,
+            3,
+            2
+          ],
+          "http": 200
+        },
+        {
+          "client_id": 3,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 4,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 5,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 6,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 7,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 8,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 9,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 10,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 11,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 12,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 13,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 14,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 15,
+          "document_ids": [],
+          "http": 200
+        },
+        {
+          "client_id": 16,
+          "document_ids": [],
+          "http": 200
+        }
+      ],
+      "write_http": 200,
+      "write_method": "PUT",
+      "write_path": "/clients/2/documents/3"
+    }
+  },
+  "git_status_porcelain": "",
+  "head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "operator_oracle_after": {
+    "delete_db_row_exists": false,
+    "delete_file_exists": false,
+    "update_db_row_exists": true,
+    "update_file_exists": true
+  },
+  "scan_range": [
+    1,
+    16
+  ],
+  "setup": {
+    "actors": {
+      "delete": {
+        "role": 7,
+        "user": 8,
+        "username": "docscope_chain_delete_1795745990"
+      },
+      "update": {
+        "role": 6,
+        "user": 7,
+        "username": "docscope_chain_update_1795745990"
+      }
+    },
+    "delete": {
+      "client_id": 2,
+      "document_id": 4,
+      "file_existed_before": true,
+      "file_sha256": "368a761e1f55f54c93c48b5e79986a97836722ea9da52ad062eed4c0db870fc6",
+      "location": "documents/clients/2/ChQYvLgHWMfPpvtk/synthetic-CHAIN-DELETE-1795745990.png",
+      "name": "Synthetic CHAIN-DELETE-1795745990"
+    },
+    "update": {
+      "client_id": 2,
+      "document_id": 3,
+      "file_existed_before": true,
+      "file_sha256": "cf80c16e5a07599ef214b7986949fda632989d471e2a44c68668249dbafaa752",
+      "location": "documents/clients/2/SixOLYPXswcyKzHi/synthetic-CHAIN-UPDATE-1795745990.png",
+      "name": "Synthetic CHAIN-UPDATE-1795745990"
+    }
+  },
+  "source": "https://localhost:8462/fineract-provider/api/v1",
+  "tenant_db": "fineract_default_fresh_b033_20261127"
+}

@@ -1,0 +1,46 @@
+{
+  "build_helper": "QueryDSL codegen used disposable local PostgreSQL instead of failing Docker VM; temporary changes to codegen plugin were restored before bootRun; product source clean during both runs; bootRun excluded codegen re-run",
+  "compiled_classes": {
+    "ApiAuthorizationRules": {
+      "path": "fineract-provider/build/classes/java/main/org/apache/fineract/infrastructure/core/config/ApiAuthorizationRules.class",
+      "sha256": "12dbb9edac2280e051dd4156a41a990e8d5d0ed8ff69ff0f00d447f8ed8877fc"
+    },
+    "DocumentReadPlatformServiceImpl": {
+      "path": "fineract-document/build/classes/java/main/org/apache/fineract/infrastructure/documentmanagement/service/DocumentReadPlatformServiceImpl.class",
+      "sha256": "4967d5a1db30628b526e256eee01ddf71a7fc6ebc3f3a6538b454691c1e07ba0"
+    },
+    "DocumentWritePlatformServiceImpl": {
+      "path": "fineract-document/build/classes/java/main/org/apache/fineract/infrastructure/documentmanagement/service/DocumentWritePlatformServiceImpl.class",
+      "sha256": "e2385ca4938f7dba71950f0b7f7d4e465c702a0b2e0263ac16ffa98eed875817"
+    }
+  },
+  "databases": {
+    "data": "synthetic only",
+    "master": "fineract_tenants_head_20261127",
+    "tenant": "fineract_default_head_20261127"
+  },
+  "evidence_sha256": {
+    "document_office_scope_exact_head_oidc_20261127.json": "128386b5b5c09cccf756836322e9d80df3285876e582dbf1b6d3c1c587155adb",
+    "document_office_write_scope_exact_head_basic_20261127.json": "d4a356fecf4507d5a1a54278f35e8c8eabfcb4c41138254e6c107ce36ea34442",
+    "document_office_write_scope_exact_head_db_20261127.txt": "7274436da9c1f1dd0712536569314380db38ea73e31f70cedc794981a59a6cc6",
+    "document_office_write_scope_exact_head_oidc_20261127.json": "171b08976974d1a62920bd85099534c3b859f25a66549d1e6e7e220253cbaeba"
+  },
+  "executed_git_head": "4d9557a572b178bd32e1839f81c48204b8fcad49",
+  "execution": "Gradle :fineract-provider:bootRun on checkout; Java 25; 127.0.0.1 HTTPS; separate basic and external OIDC processes",
+  "git_status_porcelain": "",
+  "logs": {
+    "basic": {
+      "provider_compile_seen": true,
+      "sha256": "ad24f3ee47c2a8fd014414759a5d7a2c7d81bf9dbd2946e73d8e626e0ab22176",
+      "startup_line": "2026-11-27 00:11:40.259 - INFO 6973  [        default] --- [           main] org.apache.fineract.ServerApplication    : Started ServerApplication in 54.024 seconds (process running for 54.277)"
+    },
+    "oidc": {
+      "provider_compile_seen": true,
+      "sha256": "5af88f2a43bd4de947951d42a138522632c10a1e8423a5373f3572a22d2e7f55",
+      "startup_line": "2026-11-27 00:15:11.465 - INFO 13285  [        default] --- [           main] org.apache.fineract.ServerApplication    : Started ServerApplication in 52.802 seconds (process running for 53.024)"
+    }
+  },
+  "recorded_at": "2026-11-27T00:16:44.159781+09:00",
+  "source_repo_clean_during_runtime": true,
+  "upstream_develop_head_at_recording": "4d9557a572b178bd32e1839f81c48204b8fcad49"
+}

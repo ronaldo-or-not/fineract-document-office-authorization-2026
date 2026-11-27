@@ -1,0 +1,5 @@
+docscope_chain_delete_1795748654|2|.2.|Synthetic Docscope chain_delete 1795748654|DELETE_DOCUMENT,READ_CLIENT,READ_DOCUMENT
+docscope_chain_update_1795748654|2|.2.|Synthetic Docscope chain_update 1795748654|READ_CLIENT,READ_DOCUMENT,UPDATE_DOCUMENT
+1|2|.2.
+2|3|.3.
+3|clients|2|A-office account changed B document after API scan 1795748654

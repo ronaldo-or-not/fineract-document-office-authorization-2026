@@ -1,0 +1,11 @@
+OFFICE|2|Scope Lab Branch A|.2.
+OFFICE|3|Scope Lab Branch B|.3.
+USER_ROLE|docscope_chain_update_1795745718|2|READ_CLIENT
+USER_ROLE|docscope_chain_update_1795745718|2|READ_DOCUMENT
+USER_ROLE|docscope_chain_update_1795745718|2|UPDATE_DOCUMENT
+USER_ROLE|docscope_chain_delete_1795745718|2|DELETE_DOCUMENT
+USER_ROLE|docscope_chain_delete_1795745718|2|READ_CLIENT
+USER_ROLE|docscope_chain_delete_1795745718|2|READ_DOCUMENT
+CLIENT|2|2
+CLIENT|3|3
+DOCUMENT|15|clients|3|A-office account changed B document after API scan 1795745718

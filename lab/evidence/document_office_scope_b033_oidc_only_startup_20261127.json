@@ -1,0 +1,20 @@
+{
+  "application_failed_to_start": true,
+  "command": ":fineract-provider:bootRun -x :fineract-querydsl:querydslCodegen",
+  "executed_git_head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "failure_cause": "Parameter 1 of constructor in org.apache.fineract.useradministration.service.ForgotPasswordServiceImpl required a bean of type org.springframework.security.crypto.password.PasswordEncoder that could not be found.",
+  "flags": {
+    "FINERACT_SECURITY_BASICAUTH_ENABLED": "false",
+    "FINERACT_SECURITY_OAUTH_ENABLED": "false",
+    "FINERACT_SECURITY_OIDC_FEDERATION_ENABLED": "true"
+  },
+  "git_status_porcelain": "",
+  "gradle_result": "BUILD FAILED in 1m 3s",
+  "log_sha256": "db1a3c688bf448eb2c727fe4a2b07e1baa03b2b0dac29e4310061d8cb8eb7d60",
+  "master_db": "fineract_tenants_fresh_b033_20261127",
+  "server_port": 8466,
+  "server_started": false,
+  "source_modified_for_run": false,
+  "tenant_db": "fineract_default_fresh_b033_20261127",
+  "upstream_develop_head": "b033c13637123574a2242e39ce5e6aef29f58fdb"
+}

@@ -1,0 +1,38 @@
+{
+  "authentication": "Fineract built-in OAuth2 authorization code with PKCE",
+  "claims": {
+    "role": [
+      "Synthetic Doc Scope Reader 20261126"
+    ],
+    "scope": [
+      "READ_DOCUMENT",
+      "READ_CLIENT"
+    ],
+    "sub": "doc_scope_reader_20261126",
+    "tenant": "default"
+  },
+  "results": {
+    "attachment": {
+      "bytes": 143,
+      "http": 200,
+      "sha256": "380f4221eb18e55a81484f3bfd1ffbe1bc4c9fad48f60c8b160a4469f15350f2",
+      "synthetic_marker": true
+    },
+    "client": {
+      "bytes": 452,
+      "http": 404
+    },
+    "doc_list": {
+      "bytes": 290,
+      "document_ids": [
+        2
+      ],
+      "http": 200
+    },
+    "doc_meta": {
+      "bytes": 288,
+      "http": 200
+    }
+  },
+  "user": "doc_scope_reader_20261126"
+}

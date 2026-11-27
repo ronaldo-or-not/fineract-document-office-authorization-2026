@@ -1,0 +1,90 @@
+{
+  "fixture_sha256": {
+    "delete_target": "9c95a51ea8ed99df2c9d3e0433dd0e023ae98bc5bd4da75b66a942d5d7308da9",
+    "update_target": "6e54e4ea88b0c6806124a898ad4dd720aeb2528937feff699ab06942a4be3cd1"
+  },
+  "ids": {
+    "client_a": 2,
+    "client_b": 3,
+    "delete_target": 4,
+    "deleter": {
+      "role": 8,
+      "user": 10,
+      "username": "docscope_delete_1795704466"
+    },
+    "original_b_document": 2,
+    "update_target": 3,
+    "updater": {
+      "role": 7,
+      "user": 9,
+      "username": "docscope_update_1795704466"
+    }
+  },
+  "observations": {
+    "deleter_b_client": {
+      "http": 404,
+      "name": null,
+      "resource_id": null
+    },
+    "deleter_b_doc_read": {
+      "http": 403,
+      "name": null,
+      "resource_id": null
+    },
+    "deleter_wrong_parent_delete": {
+      "http": 200,
+      "name": null,
+      "resource_id": 4
+    },
+    "deleter_wrong_permission_update": {
+      "http": 403
+    },
+    "reader_b_doc_after_delete": {
+      "http": 404,
+      "name": null,
+      "resource_id": null
+    },
+    "reader_b_doc_after_update": {
+      "http": 200,
+      "name": "Changed by A office with mismatched parent 1795704466",
+      "resource_id": null
+    },
+    "reader_b_doc_before": {
+      "http": 200,
+      "name": "Synthetic B-UPDATE-1795704466",
+      "resource_id": null
+    },
+    "reader_delete_doc_before": {
+      "http": 200,
+      "name": "Synthetic B-DELETE-1795704466",
+      "resource_id": null
+    },
+    "reader_original_b_doc_unchanged": {
+      "http": 200,
+      "name": "Synthetic BRANCH-B ID check",
+      "resource_id": null
+    },
+    "updater_b_client": {
+      "http": 404,
+      "name": null,
+      "resource_id": null
+    },
+    "updater_b_doc_read": {
+      "http": 403,
+      "name": null,
+      "resource_id": null
+    },
+    "updater_wrong_parent_update": {
+      "http": 200,
+      "name": null,
+      "resource_id": 3
+    },
+    "updater_wrong_permission_delete": {
+      "http": 403,
+      "name": null,
+      "resource_id": null
+    }
+  },
+  "source": "https://localhost:8455/fineract-provider/api/v1",
+  "tag": "1795704466"
+}

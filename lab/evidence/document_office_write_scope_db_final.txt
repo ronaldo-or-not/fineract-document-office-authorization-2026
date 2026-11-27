@@ -1,0 +1,13 @@
+OFFICE|2|Scope Lab Branch A|.2.
+OFFICE|3|Scope Lab Branch B|.3.
+USER_ROLE|docscope_update_1795704466|2|READ_CLIENT
+USER_ROLE|docscope_update_1795704466|2|UPDATE_DOCUMENT
+USER_ROLE|docscope_delete_1795704466|2|DELETE_DOCUMENT
+USER_ROLE|docscope_delete_1795704466|2|READ_CLIENT
+CLIENT|2|2
+CLIENT|3|3
+DOCUMENT|1|clients|2|Synthetic BRANCH-A ID check
+DOCUMENT|2|clients|3|Synthetic BRANCH-B ID check
+DOCUMENT|3|clients|3|Changed by A office with mismatched parent 1795704466
+DOCUMENT|5|clients|3|OIDC A-office changed B document 1795704718
+DELETED_DOCUMENT_COUNT|0

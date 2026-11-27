@@ -1,0 +1,20 @@
+{
+  "actor": "doc_scope_zero_20261126",
+  "actor_office_hierarchy_in_db": ".2.",
+  "actor_permission_count_in_db": 0,
+  "actor_permissions": [],
+  "admin_postcheck_http": 200,
+  "admin_postcheck_name": "OIDC A-office changed B document 1795749186",
+  "head": "b033c13637123574a2242e39ce5e6aef29f58fdb",
+  "observations": {
+    "attachment_http": 403,
+    "client_http": 403,
+    "delete_http": 403,
+    "document_get_http": 403,
+    "document_list_http": 403,
+    "update_http": 403
+  },
+  "source": "https://127.0.0.1:8469/fineract-provider/api/v1",
+  "target_client_id": 2,
+  "target_document_id": 11
+}

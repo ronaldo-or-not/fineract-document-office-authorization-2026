@@ -1,0 +1,11 @@
+OFFICE|2|Scope Lab Branch A|.2.
+OFFICE|3|Scope Lab Branch B|.3.
+USER_ROLE|7|doc_scope_nodoc_20261126|2|Synthetic Client Only 20261126|READ_CLIENT
+USER_ROLE|6|doc_scope_reader_20261126|2|Synthetic Doc Scope Reader 20261126|READ_CLIENT
+USER_ROLE|6|doc_scope_reader_20261126|2|Synthetic Doc Scope Reader 20261126|READ_DOCUMENT
+USER_ROLE|8|doc_scope_zero_20261126|2|Synthetic Zero Permission 20261126|NO_PERMISSION
+CLIENT|2|Synthetic DocscopeA|2
+CLIENT|3|Synthetic DocscopeB|3
+DOCUMENT|1|clients|2|Synthetic BRANCH-A ID check
+DOCUMENT|2|clients|3|Synthetic BRANCH-B ID check
+ZERO_ROLE|6|Synthetic Zero Permission 20261126|disabled=false|permission_count=0
