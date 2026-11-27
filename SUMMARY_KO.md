@@ -1,29 +1,34 @@
-# Apache Fineract: 다른 지점 고객 문서를 찾아 읽고 바꾸고 삭제한 재현
+# 한 장 요약: 고객은 404, 문서는 200
 
-**2026-11-27 검증 | Apache Fineract `develop` 커밋 [`b033c13637123574a2242e39ce5e6aef29f58fdb`](https://github.com/apache/fineract/commit/b033c13637123574a2242e39ce5e6aef29f58fdb) | 로컬 합성 데이터**
+**질문:** A지점 계정이 B지점 고객을 볼 수 없다면, 그 고객의 문서도 막힐까?
 
-## 핵심 결과
+**답:** 로컬에서 실행한 Fineract `develop` [커밋 `b033c1363…`](https://github.com/apache/fineract/commit/b033c13637123574a2242e39ce5e6aef29f58fdb)에서는 **고객 상세 `404`**, **문서 목록·첨부 `200`**이었다. A지점 비관리자 계정 두 개가 B문서 ID를 API에서 직접 찾고, 올바른 B고객 경로로 각각 **이름 수정 `200`**과 **삭제 `200`**를 수행했다.
 
-**A지점 비관리자 계정은 B지점 고객 상세를 볼 수 없었다(`404`). 그런데 같은 고객의 문서 ID를 API에서 직접 찾아 첨부 파일을 읽고, 문서 이름을 바꾸고, 다른 문서를 삭제했다.** 수정·삭제 요청은 실제 문서 소속과 일치하는 **B고객 URL**로 보냈다. 삭제 뒤에는 문서 조회가 `404`였고 데이터베이스 행과 실제 파일도 사라졌다.
+```mermaid
+flowchart LR
+    U["A지점 제한 계정 2개"] -->|B고객 상세| C["404"]
+    U -->|B문서 목록·첨부| D["200 · 문서 ID 발견"]
+    D -->|수정 계정| P["PUT 200 · 이름 변경"]
+    D -->|삭제 계정| X["DELETE 200 · DB행/파일 삭제"]
+```
 
-| 검증 단계 | A지점 제한 계정의 결과 |
-| --- | --- |
-| 합성 고객 ID 1~16에서 B문서 ID 탐색 | B고객의 문서 목록 `200`; 대상 문서 ID 7·8 발견 |
-| B고객 상세와 문서 첨부 대조 | 고객 상세 `404`; 문서 세부·첨부 `200`, 첨부 해시는 준비한 합성 파일과 일치 |
-| 수정 권한 계정으로 B문서 7 이름 변경 | `PUT /clients/2/documents/7` → `200`; 재조회한 이름이 변경됨 |
-| 삭제 권한 계정으로 B문서 8 삭제 | `DELETE /clients/2/documents/8` → `200`; 재조회 `404`, DB 행과 물리 파일 모두 없음 |
+## 왜 이런 순서로 확인했나
 
-두 계정은 A지점 소속이며 공통으로 `READ_CLIENT`·`READ_DOCUMENT`를 가졌다. 한 계정에는 `UPDATE_DOCUMENT`, 다른 계정에는 `DELETE_DOCUMENT`만 추가했다. 관리자는 합성 지점·고객·문서와 계정 생성에만 사용했고, 위 탐색·열람·수정·삭제에는 제한 계정의 인증 정보를 사용했다. [요청별 결과](lab/evidence/document_office_single_account_chain_fresh_b033_regen_20261127.json)와 [역할·문서 소속 DB 대조](lab/evidence/document_office_single_account_chain_fresh_b033_regen_db_20261127.txt)를 공개했다.
+| 생각한 문제 | 해 본 일 | 얻은 답 |
+| --- | --- | --- |
+| 처음 본 문서 경로 권한 누락이 새 문제인가? | 공식 1.16.1과 공개 [PR #6935](https://github.com/apache/fineract/pull/6935) 비교 | 해당 경로 권한 누락은 공개 수정과 겹침. 수정 **이후**의 객체 범위를 보기로 함 |
+| 메서드 권한 수정만으로 지점 경계도 지켜질까? | 수정 후 `develop`을 빈 DB에서 직접 기동; A계정으로 B고객·문서 비교 | 문서 권한 0개는 `403`, 문서 권한을 가진 A계정은 B고객 `404`·B문서 `200` |
+| 대상 ID를 미리 알아야만 하나? | 합성 고객 ID 1~16을 제한 계정으로 조회 | B문서 ID 7·8을 API에서 발견 |
+| `200`이 실제 변경·삭제를 뜻하나? | 첨부 해시·수정 후 이름·삭제 후 DB와 파일 확인 | 원본 파일 수신, 이름 변경, DB 행·파일 삭제 확인 |
 
-## 재현의 강점
+**공격 단계의 권한:** 두 계정 모두 `READ_CLIENT`·`READ_DOCUMENT`. 수정 계정에는 `UPDATE_DOCUMENT`, 삭제 계정에는 `DELETE_DOCUMENT`만 추가했다. 관리자는 합성 자료와 계정을 만드는 준비 단계에만 사용했다.
 
-- **대상 ID를 제한 계정이 찾았다.** 운영자가 공격 단계에 B문서 ID를 넘겨주지 않았다. 합성 고객 ID 1~16을 API로 조회해 대상 문서 두 개를 골랐다.
-- **결과를 서버 상태로 확인했다.** HTTP `200`만 기록한 것이 아니라 수정 후 이름, 삭제 후 조회 `404`, DB 행 부재와 물리 파일 삭제를 대조했다.
-- **정상·차단 대조를 함께 실행했다.** [자기 지점 문서 작업](lab/evidence/document_office_same_office_control_fresh_b033_regen_20261127.json)은 성공했고, [문서 권한이 0개인 계정](lab/evidence/document_office_scope_b033_basic_zero_role_control_20261127.json)의 문서 세부·첨부·수정·삭제는 `403`이었다. 별도의 [합성 OIDC 실행](lab/evidence/document_office_scope_b033_oidc_write_20261127.json)에서 계정에 없는 반대 쓰기 권한도 `403`이었다.
-- **실행한 코드를 고정했다.** 빈 데이터베이스에서 위 `develop` 커밋을 직접 빌드·기동하고, 재생성한 QueryDSL 소스로 재검증했다. [빌드·서버 출처](lab/evidence/document_office_single_account_chain_fresh_b033_regen_provenance_20261127.json)를 보존했다.
+## 이 과정에서 확인한 원칙
 
-## 이 결과가 보여주는 것
+1. **경로에 권한 검사가 있어도 객체 범위 검사는 별개다.** 수정 후 코드에서 권한 0개 요청은 차단됐지만, 문서 권한 계정의 교차 지점 동작은 남았다.
+2. **API 응답과 서버 상태를 함께 봐야 한다.** 문서 첨부 해시, 수정된 이름, 삭제된 DB 행·물리 파일을 대조했다.
+3. **공개 수정을 먼저 확인하면 다음 가설이 선명해진다.** 이미 다뤄진 경로 규칙과 남은 고객·문서 지점 범위를 분리했다.
 
-고객 상세 조회가 적용하는 지점 범위와 문서 API가 적용하는 범위가 서로 다르게 동작했다. 문서 메서드 권한을 확인하는 최신 코드에서도 이 차이가 남았다. 쓰기 서비스가 URL의 부모 고객 ID와 실제 문서 소속을 대조하지 않는 현상도 별도로 재현했다. 교차 지점 작업은 **올바른 B고객 URL로도 성공했으므로**, 잘못된 부모 ID를 넣는 방법이 필수 조건은 아니다.
+**검증 범위:** 2026-11-27, 직접 소유한 로컬 서버의 합성 고객·PNG. `*_DOCUMENT` 권한이 원래 지점별인지 테넌트 전체인지는 제품 정책 확인이 필요하다.
 
-실험은 직접 소유한 로컬 서버의 합성 고객·PNG 문서에서 수행했다. 문서 권한이 원래 지점별인지 테넌트 전체인지에 대한 제품 정책은 확인이 필요하다. 버전별 수정 범위와 보안 분류 조건은 [전체 검증 현황](DOCUMENT_OFFICE_VERIFICATION_STATUS_20261127.md), [읽기 보고서](DOCUMENT_OFFICE_SCOPE_REPORT_KO.md), [쓰기 보고서](DOCUMENT_OFFICE_WRITE_SCOPE_REPORT_KO.md)에 분리했다.
+**근거:** [요청별 기록](lab/evidence/document_office_single_account_chain_fresh_b033_regen_20261127.json) · [역할·소속 DB 대조](lab/evidence/document_office_single_account_chain_fresh_b033_regen_db_20261127.txt) · [빌드·실행 출처](lab/evidence/document_office_single_account_chain_fresh_b033_regen_provenance_20261127.json) · [자기 지점 대조](lab/evidence/document_office_same_office_control_fresh_b033_regen_20261127.json) · [권한 0개 대조](lab/evidence/document_office_scope_b033_basic_zero_role_control_20261127.json) · [전체 검증 현황](DOCUMENT_OFFICE_VERIFICATION_STATUS_20261127.md)
