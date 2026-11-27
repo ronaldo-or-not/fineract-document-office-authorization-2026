@@ -1,5 +1,7 @@
 # Apache Fineract document API: cross-office reads and writes reproduced
 
+[한국어 요약본: 교차 지점 문서 발견·열람·수정·삭제 재현](SUMMARY_KO.md)
+
 On the tested `develop` commit, two limited A-office users found a B-office client's document IDs through the API, downloaded an attachment, changed one document's name and deleted another. The same users received `404` for that B-client's detail. The write requests used the **correct B-client URL**; after deletion, the document's database row and physical file were gone. The attacker phase used the limited users' own credentials, while an administrator created only the synthetic fixtures.
 
 ## 한국어 요약
