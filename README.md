@@ -6,13 +6,13 @@
 
 **읽는 순서:** 이 페이지 → [한국어 한 장 요약](SUMMARY_KO.md) → [상세 재현 기록](DOCUMENT_OFFICE_VERIFICATION_STATUS_20261127.md) · [English technical overview](TECHNICAL_OVERVIEW_EN.md)
 
-## ① 왜 이걸 의심했나
+## ① 출발점: 고객과 문서의 접근 경계
 
 Fineract의 [지점 계층 문서](https://github.com/apache/fineract/blob/b033c13637123574a2242e39ce5e6aef29f58fdb/fineract-doc/src/docs/en/chapters/architecture/office-hierarchy-access.adoc)는 자기 지점과 하위 지점의 자원 접근을 설명한다. 실제로 A지점 계정의 **B고객 상세 조회는 `404`**였다.
 
 그렇다면 같은 고객 ID를 경로에 쓰는 **문서 API도 B고객의 지점 경계를 확인할까?** 이 질문에서 시작했다.
 
-## ② 어떻게 조사 방향을 좁혔나
+## ② 방향 전환: 공개 수정 이후의 지점 경계
 
 ```mermaid
 flowchart TD
@@ -25,7 +25,7 @@ flowchart TD
 
 처음 발견한 넓은 문서 경로 권한 누락은 이미 [PR #6935](https://github.com/apache/fineract/pull/6935)가 다뤘다. 그래서 **그 수정이 들어간 `develop` 커밋**을 새 DB에서 직접 실행하고, 수정 뒤에도 남는 *객체별 지점 범위*를 확인했다.
 
-## ③ 실제로 무슨 일이 일어났나
+## ③ 검증 결과: 발견부터 삭제까지
 
 실험에는 형제 지점 A·B, 가짜 고객과 PNG 문서를 만들었다. 공격 단계에는 **A지점 비관리자 계정 두 개**만 썼다. 둘 다 고객·문서 읽기 권한을 갖고, 각각 문서 수정 또는 삭제 권한 하나만 추가로 가졌다.
 
@@ -41,7 +41,7 @@ flowchart TD
 
 > HTTP 코드: `200` 성공 · `403` 권한 거부 · `404` 요청한 고객을 보여주지 않음
 
-## ④ 이 과정에서 배운 것
+## ④ 배운 점: 권한과 객체 범위
 
 - **권한은 여러 층이다.** 로그인 여부, GET/PUT/DELETE 권한, *그 문서의 소속 고객에 접근할 권한*은 서로 다른 질문이다.
 - **응답 코드만으로 끝내지 않았다.** 첨부 해시, 수정 후 이름, 삭제 후 DB 행과 물리 파일까지 확인해야 실제 영향을 설명할 수 있다.
@@ -49,7 +49,7 @@ flowchart TD
 
 **확인한 사실:** [`develop` 커밋 `b033c1363…`](https://github.com/apache/fineract/commit/b033c13637123574a2242e39ce5e6aef29f58fdb)을 직접 빌드·실행한 로컬 한 테넌트에서 위 동작이 재현됐다. **남은 판단:** `*_DOCUMENT` 권한이 원래 지점별인지 테넌트 전체인지에 대한 제품 정책 확인이 필요하다. 실제 금융기관이나 실제 고객 데이터는 시험하지 않았다.
 
-## 증거를 따라가려면
+## 증거와 재현 기록
 
 | 보고 싶은 것 | 자료 |
 | --- | --- |
