@@ -2,7 +2,7 @@
 
 ### Apache Fineract 문서 API의 지점 권한 경계를 추적한 기록
 
-> A지점의 제한된 계정은 B지점 고객 상세를 볼 수 없었다. 그런데 그 고객의 문서를 **찾고 → 읽고 → 수정하고 → 삭제**할 수 있었다. 삭제 후 DB 행과 실제 파일도 사라졌다.
+> A지점의 제한된 계정 두 개는 B지점 고객 상세를 볼 수 없었다. 그런데 그 고객의 문서를 **찾고 → 읽고 → 각각 수정·삭제**할 수 있었다. 삭제 후 DB 행과 실제 파일도 사라졌다.
 
 **읽는 순서:** 이 페이지 → [한국어 한 장 요약](SUMMARY_KO.md) → [상세 재현 기록](DOCUMENT_OFFICE_VERIFICATION_STATUS_20261127.md) · [English technical overview](TECHNICAL_OVERVIEW_EN.md)
 
