@@ -1,14 +1,22 @@
-# Apache Fineract document authorization: release and development snapshot
+# Apache Fineract document API: cross-office reads and writes reproduced
 
-Research snapshot: **27 November 2026 (KST)**. All requests in this repository targeted a locally owned Fineract instance with synthetic offices, clients and PNG documents. No financial institution, real customer data or third-party service was tested.
+On the tested `develop` commit, two limited A-office users found a B-office client's document IDs through the API, downloaded an attachment, changed one document's name and deleted another. The same users received `404` for that B-client's detail. The write requests used the **correct B-client URL**; after deletion, the document's database row and physical file were gone. The attacker phase used the limited users' own credentials, while an administrator created only the synthetic fixtures.
+
+## 한국어 요약
+
+**고객은 보이지 않았지만, 그 고객의 문서는 발견하고 읽고 바꾸고 삭제할 수 있었다.** A지점 소속 비관리자 계정 두 개에 `READ_CLIENT`·`READ_DOCUMENT`와 각각 `UPDATE_DOCUMENT`·`DELETE_DOCUMENT`만 부여했다. 두 계정은 B지점 고객 상세에서 `404`를 받았지만, 합성 고객 ID 1~16을 API로 조회해 B문서 ID를 직접 찾아냈다. 첨부 파일은 원본과 해시가 일치했고, 올바른 B고객 URL로 보낸 수정 요청은 문서 이름을 바꿨다. 삭제 요청 후에는 문서 조회가 `404`였고, DB 행과 실제 파일도 사라졌다. [요청별 실행 기록](lab/evidence/document_office_single_account_chain_fresh_b033_regen_20261127.json)과 [빌드·실행 출처](lab/evidence/document_office_single_account_chain_fresh_b033_regen_provenance_20261127.json)를 공개한다.
+
+이 결과는 **빈 데이터베이스에서 직접 빌드·기동한 Fineract `develop` 커밋 `b033c1363…`**에서 얻었다. 자기 지점의 정상 작업은 성공했고, 부여되지 않은 반대 쓰기 권한은 `403`으로 차단됐다. 공식 1.16.1 바이너리도 별도로 실행해 버전별 차이를 대조했다. 모든 실험은 직접 소유한 로컬 서버와 합성 고객·PNG만 사용했다.
+
+Research snapshot: **27 November 2026 (KST)**. No financial institution, real customer data or third-party service was tested.
 
 ## Findings and their status
 
 | Tested build | Actor and observed behavior | Interpretation |
 | --- | --- | --- |
-| Official [Fineract 1.16.1](https://fineract.apache.org/) binary, verified against Apache's SHA-512 | A signed-in A-office user with **zero API permissions** received `200` for a B-office client's document detail and attachment, and for document `PUT` and `DELETE`. Client detail and document listing returned `403`; unauthenticated access returned `401`. | A nested document route permission gap. [Upstream PR #6935](https://github.com/apache/fineract/pull/6935), merged on 22 November 2026, publicly addresses the route matcher. **This is not claimed as a new, undisclosed finding.** The fix was not in the tested 1.16.1 binary. |
-| `develop` commit [`b033c13637123574a2242e39ce5e6aef29f58fdb`](https://github.com/apache/fineract/commit/b033c13637123574a2242e39ce5e6aef29f58fdb), built and run against fresh databases | The zero-permission user's nested requests returned `403`. An A-office non-admin user with `READ_CLIENT`, `READ_DOCUMENT` and either `UPDATE_DOCUMENT` or `DELETE_DOCUMENT` received `404` for B-client detail but `200` for B-document reads and for the permitted write using the **correct B-client URL**. The delete removed both the database row and physical file. | Cross-office document behavior persists after the route fix. Whether it violates the product's intended authorization policy depends on whether document permissions are office-scoped or tenant-wide. We do **not** claim a confirmed new CVE or severity. |
+| `develop` commit [`b033c13637123574a2242e39ce5e6aef29f58fdb`](https://github.com/apache/fineract/commit/b033c13637123574a2242e39ce5e6aef29f58fdb), built and run against fresh databases | The zero-permission user's nested requests returned `403`. An A-office non-admin user with `READ_CLIENT`, `READ_DOCUMENT` and either `UPDATE_DOCUMENT` or `DELETE_DOCUMENT` received `404` for B-client detail but `200` for B-document reads and for the permitted write using the **correct B-client URL**. The delete removed both the database row and physical file. | The route fix enforced method permissions, while these document requests still lacked a parent-client office check. |
 | Same `develop` commit, write path | A write request with a client ID that did **not** own the document still changed or deleted that document when the document ID was valid; the corresponding GET rejected that parent mismatch. | Reproduced parent-ID consistency defect. The mismatched URL is **not required** for the cross-office write above. |
+| Official [Fineract 1.16.1](https://fineract.apache.org/) binary, verified against Apache's SHA-512 | A signed-in A-office user with **zero API permissions** received `200` for a B-office client's document detail and attachment, and for document `PUT` and `DELETE`. Client detail and document listing returned `403`; unauthenticated access returned `401`. | This nested route permission gap was publicly addressed by [upstream PR #6935](https://github.com/apache/fineract/pull/6935), merged on 22 November 2026. The fix was not in the tested 1.16.1 binary. |
 
 The [office hierarchy documentation](https://github.com/apache/fineract/blob/b033c13637123574a2242e39ce5e6aef29f58fdb/fineract-doc/src/docs/en/chapters/architecture/office-hierarchy-access.adoc) describes access to one's own and subordinate offices, but does not explicitly say whether `*_DOCUMENT` permissions are exceptions. That unresolved policy point is decisive for classifying the development-branch behavior as an authorization vulnerability. The default non-admin role did not have document permissions in our test. We did not measure role prevalence in real deployments, large-scale discovery, financial loss, a real data breach or system availability impact.
 
@@ -36,9 +44,3 @@ The source checkout and official binary are intentionally not included. This rep
 ## Disclosure and attribution
 
 This is an independent research record, not an Apache Fineract advisory. The findings were not submitted to the Fineract security team before this public release, and the maintainers have not confirmed the intended document permission scope. Fineract [asks that security vulnerabilities be reported privately](https://fineract.apache.org/). Please distinguish the publicly fixed route matcher from the remaining policy question when citing this work.
-
----
-
-## 한국어 요약
-
-공식 1.16.1 배포본에서는 권한이 0개인 로그인 계정도 다른 지점 고객의 문서 세부·첨부·수정·삭제에 성공했습니다. 이 넓은 경로 권한 누락은 이미 공개된 [PR #6935](https://github.com/apache/fineract/pull/6935)의 수정 범위와 겹칩니다. 해당 수정이 들어간 `develop` 커밋에서는 권한 0개 계정이 차단됐습니다. 다만 문서 권한을 부여받은 A지점 제한 계정은 B지점 고객 상세를 볼 수 없는데도 B문서를 읽고 수정·삭제했습니다. 문서 권한이 원래 지점별인지 테넌트 전체인지 확인되지 않았으므로, 이를 신규 확정 취약점이나 `Critical` 사고로 주장하지 않습니다. 모든 실험은 로컬의 합성 자료로 수행했습니다.
